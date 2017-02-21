@@ -4,12 +4,12 @@ machine:
 
 dependencies:
   override:
-    - docker build -t  hub.docker.com/r/eoinahern/hello_world_repo/
-    - docker run -p 8080:8080  hub.docker.com/r/eoinahern/hello_world_repo/
+    - docker build -t eoinahern/hello_world_repo/
+    - docker run -p 8080:8080 eoinahern/hello_world_repo/
 
 deployment:
   hub:
     branch: master
     commands:
       - docker login -e eoinpahern@yahoo.co.uk -u eoinahern -p hellothere123
-      - docker push hub.docker.com/r/eoinahern/hello_world_repo/
+      - docker push eoinahern/hello_world_repo/
