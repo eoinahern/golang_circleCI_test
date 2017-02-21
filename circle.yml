@@ -4,11 +4,11 @@ machine:
 
 dependencies:
   override:
-    - docker build -t eoinahern/hello_world_repo/ .
+    - docker build -t golang_circleCI_test .
 
-    test:
+test:
   override:
-    - docker run -d -p 8080:8080 eoinahern/hello_world_repo/; sleep 10
+    - docker run -d -p 8080:8080 golang_circleCI_test; sleep 10
     - curl --retry 10 --retry-delay 5 -v http://localhost:8080
 
 
