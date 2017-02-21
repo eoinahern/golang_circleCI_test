@@ -4,7 +4,6 @@ machine:
 
 dependencies:
   override:
-    - docker info
     - docker build -t eoinahern/hello_world_repo/ .
 
     test:
