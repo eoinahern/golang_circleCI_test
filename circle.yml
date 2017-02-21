@@ -4,8 +4,14 @@ machine:
 
 dependencies:
   override:
-    - docker build -t eoinahern/hello_world_repo/
-    - docker run -p 8080:8080 eoinahern/hello_world_repo/
+    - docker info
+    - docker build -t eoinahern/hello_world_repo/ .
+
+    test:
+  override:
+    - docker run -d -p 8080:8080 eoinahern/hello_world_repo/; sleep 10
+    - curl --retry 10 --retry-delay 5 -v http://localhost:8080
+
 
 deployment:
   hub:
